@@ -1,0 +1,27 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyndsielane/tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyndsielane/tech-blog/issues"
+  },
+  "homepage": "https://github.com/lyndsielane/tech-blog#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5"
+  }
+}
