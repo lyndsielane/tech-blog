@@ -24,11 +24,11 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate {
+            validate: {
                 isEmail: true,
             },
         },
-        passwod: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
