@@ -1,0 +1,17 @@
+[
+    {
+        "name": "New Tech to Watch For",
+        "description": "There are several new things coming soon. Stay on the look out to keep your technology up to date",
+        "user_id": "Tom Jones"
+    },
+    {
+        "name": "When will the new iPhone release?",
+        "description": "Rumors are still flying high on what to expect with the upcoming new iPhone release. What are you most looking for?",
+        "user_id": "Alexander Hamilton"
+    },
+    {
+        "name": "What do you think of autopilot?",
+        "description": "Now that a few people have had a chance to test the coding autopilot, everyone is on their toes waiting for a full review. Will you use it once it releases to all?",
+        "user_id": "Bill Nye"
+    }
+]

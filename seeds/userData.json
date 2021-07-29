@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tom Jones",
+    "email": "Tomjones@webcom",
+    "password": "12345678"
+  },
+  {
+    "name": "Alexander Hamilton",
+    "email": "Alexanderhamilton@web.com",
+    "password": "23456789"
+  },
+  {
+    "name": "Bill Nye",
+    "email": "Billnye@web.com",
+    "password": "87654321"
+  }
+]
