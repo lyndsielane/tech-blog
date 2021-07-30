@@ -1,6 +1,7 @@
-const Model, DataTypes = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequilize = require('../config/connection');
+const { Blog } = require('../models');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -47,12 +48,17 @@ User.init(
                 return updatedUserData;
             },
         },
-        sequelize,
+        sequilize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
     }
 );
+
+User.hasMany(Blog, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
 module.exports = User;
