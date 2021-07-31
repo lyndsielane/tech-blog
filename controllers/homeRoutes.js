@@ -13,20 +13,21 @@ router.get('/', async (req, res) => {
             ],
         });
 
-        const blogs = blogData.map((blog) => Blog.get({ plain: true}));
+        const blogs = blogData.map((blog) => blog.get({ plain: true}));
 
         res.render('homepage', {
             blogs,
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 router.get('/blog/:id', async (req, res) => {
     try {
-        const blogData = await blog.findByPk(req.params.id, {
+        const blogData = await Blog.findByPk(req.params.id, {
             include: [
                 {
                     model: user,
@@ -42,6 +43,7 @@ router.get('/blog/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -60,6 +62,7 @@ router.get('/profile', withAuth, async (req, res) => {
             logged_in: true
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
