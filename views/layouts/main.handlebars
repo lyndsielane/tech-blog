@@ -19,14 +19,24 @@
   </head>
 
   <body>
-    <div class="top-bar topbar-center">
-        <a href="#"><img id="topbar-center-logo" src="/Assets/img/techBlogLogo.png" alt="" /></a>
+    <header>
+      <div class="top-bar topbar-center">
+        <a href="#"><img
+            id="topbar-center-logo"
+            src="/Assets/img/techBlogLogo.png"
+            alt=""
+          /></a>
         <ul class="menu vertical medium-horizontal">
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Dashboard</a></li>
+          {{#if logged_in}}
+            <li><a href="#">Logout</a></li>
+          {{else}}
+            <li><a href="#">Login</a></li>
+          {{/if}}
         </ul>
       </div>
-    </div>
+    </header>
 
     {{{body}}}
 
