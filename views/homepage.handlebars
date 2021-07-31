@@ -1,5 +1,11 @@
-{{#each blogs}}
-  <h1>{{title}}</h1>
-  <p>Posted by {{user.name}} on {{date_created}}</p>
-  <p>{{description}}</p>
+{{#each blogs as |blog|}}
+  <div class="blog-list">
+    <div class="blog-title">
+      <h3>{{blog.name}}</h3>
+      <p>Posted by {{blog.user.name}} on {{blog.date_created}}</p>
+    </div>
+    <div class="blog-text">
+      <p class="featured-testimonials-quotation">{{blog.description}}</p>
+    </div>
+  </div>
 {{/each}}
