@@ -1,12 +1,13 @@
-const sequelize = require("sequelize");
+const Sequelize = require("sequelize");
+
 require("dotenv").config();
 
-let sequelize;
+let db;
 
 if (process.env.BLOGDB_URL) {
-  sequelize = new Sequelize(process.env.BLOGDB_URL);
+  db = new Sequelize(process.env.BLOGDB_URL);
 } else {
-  sequelize = new Sequelize(
+  db = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PASSWORD,
@@ -17,3 +18,5 @@ if (process.env.BLOGDB_URL) {
     }
   );
 }
+
+module.exports = db;

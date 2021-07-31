@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const blog, user = require('../models');
+const { User, Blog } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        const blogData = await blog.findAll({
+        const blogData = await Blog.findAll({
             include: [
                 {
-                    model: user,
+                    model: User,
                     attributes: ['name'],
                 },
             ],
@@ -20,13 +20,14 @@ router.get('/', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 router.get('/blog/:id', async (req, res) => {
     try {
-        const blogData = await blog.findByPk(req.params.id, {
+        const blogData = await Blog.findByPk(req.params.id, {
             include: [
                 {
                     model: user,
@@ -42,6 +43,7 @@ router.get('/blog/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -60,6 +62,7 @@ router.get('/profile', withAuth, async (req, res) => {
             logged_in: true
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
