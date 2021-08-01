@@ -76,4 +76,22 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("dashboard");
+    return;
+  }
+  res.render("signup");
+});
+
+router.get("/logout", (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+
+  res.redirect("/");
+});
+
 module.exports = router;

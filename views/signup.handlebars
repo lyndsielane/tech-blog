@@ -1,27 +1,23 @@
 <form class="callout text-center" id="login-form">
-  <h2>Login</h2>
+  <h2>Start Blogging!</h2>
+  <div class="floated-label-wrapper">
+    <label for="full-name">Name</label>
+    <input type="text" id="reg-name" name="name input" placeholder="Name" />
+  </div>
   <div class="floated-label-wrapper">
     <label for="email">Email</label>
-    <input
-      type="email"
-      id="log-email"
-      name="email input"
-      placeholder="Email"
-      required
-    />
+    <input type="email" id="reg-email" name="email input" placeholder="Email" />
   </div>
   <div class="floated-label-wrapper">
     <label for="pass">Password</label>
     <input
       type="password"
-      id="log-password"
+      id="reg-password"
       name="password input"
       placeholder="Password"
-      required
     />
   </div>
-  <input class="button expanded" type="submit" value="Log In" />
-  <a href="/signup">Sign up instead!</a>
+  <input class="button expanded" type="submit" value="Sign up" />
 </form>
 
 <script src="/JS/login.js"></script>

@@ -1,27 +1,3 @@
-//Login Functions
-const loginFormFunction = async (event) => {
-    event.preventDefault();
-
-    const email = document.querySelector('#log-email').value.trim();
-    const password = document.querySelector('#log-password').value.trim();
-
-    if (email && password) {
-
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            document.location.replace('profile');
-        } else {
-            alert(response.statusText);
-        }
-    }
-};
-
-//Login Form Script 
 $(function () {
   var showClass = "show";
 
@@ -39,8 +15,23 @@ $(function () {
     });
 });
 
-document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormFunction);
+$("#login-form").on("submit", async (event) => {
+  event.preventDefault();
 
-//Signup Functions
+  const email = $("#log-email").val();
+  const password = $("#log-password").val();
+
+  if (email && password) {
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.replace("dashboard");
+    } else {
+      alert(response.statusText);
+    }
+  }
+});
