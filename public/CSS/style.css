@@ -138,3 +138,7 @@ footer {
 .button {
   background-color: var(--dk-red);
 }
+
+.button:hover {
+  background-color: var(--navy);
+}
